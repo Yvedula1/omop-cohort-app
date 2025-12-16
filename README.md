@@ -2,8 +2,10 @@
 
 The application is fully containerized and published on Docker Hub.
 
+-Docker Hub: https://hub.docker.com/u/yvedula
 - Frontend: https://hub.docker.com/r/yvedula/omop-frontend
 - Backend: https://hub.docker.com/r/yvedula/omop-backend
+  
 
 ### Run the application
 
