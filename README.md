@@ -15,7 +15,7 @@ docker compose up --build
 
 --------------------------------------------------------------------------------------
 
-OMOP Tables Used
+OMOP Tables Used : Person, condition_occurrence, measurement, concept, concept_relationship, concept_ancestor
 
 The following OMOP CDM v5.4 tables were used to construct disease and non-disease cohorts and to extract outcome measurements:
 
@@ -113,3 +113,12 @@ Measurements were treated strictly as outcomes, not cohort-defining variables.
 The logic aligns with best practices recommended by OHDSI for cohort construction.
 The cohort was constructed using the OMOP SynPUF dataset containing approximately 100,000 synthetic patients. Disease and non-disease cohorts were successfully derived using condition-based logic; however, outcome measurements (Glucose and Hemoglobin) were sparse or unavailable for many patients in this dataset. This behavior is expected, as SynPUF is a claims-focused synthetic dataset with limited laboratory measurement coverage. The application therefore returns empty outcome results for some cohorts and explicitly reflects this in the UI, ensuring transparency and accurately mirroring real-world clinical data incompleteness while preserving correct cohort construction logic.
 
+## Application Usage
+
+1. Select a disease (e.g., Hypertension, Diabetes)
+2. Backend builds disease and control cohorts
+3. Choose a clinical variable (e.g., glucose, hemoglobin)
+4. View cohort distribution charts by gender and age
+5. Export plots and summary statistics
+
+Github didnot have data folder as it is more than 100 MB
