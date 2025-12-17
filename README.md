@@ -17,7 +17,7 @@ At runtime, the required data is provided by mounting a local `data/` directory 
 ### Run the application
 1. Clone the repository:
  
-   git clone https://github.com/<your-username>/<repo-name>.git
+   git clone https://github.com/Yvedula1/omop-cohort-app.git
    cd <repo-name>
 
 2. Start the application:
