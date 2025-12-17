@@ -3,6 +3,8 @@ from fastapi.middleware.cors import CORSMiddleware
 import duckdb
 from pathlib import Path
 from datetime import datetime
+from mini_omop_generator import create_and_seed_mini_omop
+
 
 # ----------------------------
 # App setup
@@ -26,6 +28,13 @@ DB_PATH = BASE_DIR / "data" / "omop.duckdb"
 # DB connection
 # ----------------------------
 con = duckdb.connect(str(DB_PATH))
+def ensure_omop_ready():
+    try:
+        con.execute("SELECT 1 FROM person LIMIT 1")
+    except Exception:
+        print("OMOP tables not found — generating mini OMOP schema")
+        create_and_seed_mini_omop(con)
+
 
 # ----------------------------
 # Constants
@@ -88,6 +97,7 @@ def age_group_sql():
             ELSE '60+'
         END
     """
+ensure_omop_ready()
 
 # ----------------------------
 # Health
