@@ -18,9 +18,10 @@ At runtime, the required data is provided by mounting a local `data/` directory 
 1. Clone the repository:
  
    git clone https://github.com/Yvedula1/omop-cohort-app.git
+   
    cd <repo-name>
 
-2. Start the application:
+3. Start the application:
 
 docker compose up --build
 
