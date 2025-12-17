@@ -13,6 +13,7 @@ The backend application depends on OMOP Common Data Model (CDM) tables stored in
 Due to GitHub file size limits and data governance best practices, raw OMOP datasets and the generated DuckDB database are intentionally excluded from this repository.
 
 At runtime, the required data is provided by mounting a local `data/` directory into the backend container using Docker volumes.
+If no OMOP data is mounted at runtime, the backend automatically initializes a lightweight OMOP-compatible synthetic dataset for demo and grading purposes. The backend falls back to a synthetic OMOP dataset so the application runs out-of-the-box. When real data is mounted, the same logic runs without changes
 
 ### Run the application
 1. Clone the repository:
