@@ -15,9 +15,20 @@ Due to GitHub file size limits and data governance best practices, raw OMOP data
 At runtime, the required data is provided by mounting a local `data/` directory into the backend container using Docker volumes.
 
 ### Run the application
+1. Clone the repository:
+ 
+   git clone https://github.com/<your-username>/<repo-name>.git
+   cd <repo-name>
 
-```bash
+2. Start the application:
+
 docker compose up --build
+
+3. Access the application:
+
+Frontend UI: http://localhost:3000
+
+Backend API (Swagger): http://localhost:8000/docs
 
 
 --------------------------------------------------------------------------------------
