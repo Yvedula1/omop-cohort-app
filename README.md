@@ -6,6 +6,13 @@ The application is fully containerized and published on Docker Hub.
 - Frontend: https://hub.docker.com/r/yvedula/omop-frontend
 - Backend: https://hub.docker.com/r/yvedula/omop-backend
   
+## Data Dependency Notice
+
+The backend application depends on OMOP Common Data Model (CDM) tables stored in a DuckDB database to build disease cohorts and compute clinical measurements.
+
+Due to GitHub file size limits and data governance best practices, raw OMOP datasets and the generated DuckDB database are intentionally excluded from this repository.
+
+At runtime, the required data is provided by mounting a local `data/` directory into the backend container using Docker volumes.
 
 ### Run the application
 
